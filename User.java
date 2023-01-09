@@ -1,17 +1,16 @@
-package com.training.web.model;
+package com.training.jsf.bean;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name="user")
+@RequestScoped
 public class User {
 	
 	private String userName;
 	private String password;
-	public User() {
+	private String email;
 	
-	}
-	public User(String userName, String password) {
-		super();
-		this.userName = userName;
-		this.password = password;
-	}
 	public String getUserName() {
 		return userName;
 	}
@@ -24,9 +23,19 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 
+	public String sayHi() {
+		if(userName.equals("prashu")&&  password.equals("123")&& email.equals("prashu@gmail.com")) {
+			return "success";
+		}
+		else {
+			return "fail";
+		}
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }
-
-
